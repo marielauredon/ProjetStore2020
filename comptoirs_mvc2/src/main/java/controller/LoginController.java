@@ -22,10 +22,15 @@ public class LoginController {
 
     @Inject
     Models models;
+    
+    @GET
+	public void show() {
+		models.put("login", facadeC.findAll());
+	}
 
     @POST
-    public String login(@FormParam("nom") String nom, @FormParam("code") int code) {
-        if (facadeC.find(code).getContact()== nom){
+    public String login(@FormParam("nom") String nom, @FormParam("code") String code) {
+        if (facadeC.find(nom).getCode()== code){
             return "redirect:/produits";
         }
         models.put("databaseErrorMessage", "Mot de passe ou login incorrect");
