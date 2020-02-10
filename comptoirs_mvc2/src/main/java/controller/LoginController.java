@@ -1,6 +1,8 @@
 package controller;
 
 import comptoirs.model.dao.ClientFacade;
+import comptoirs.model.entity.Client;
+import form.ClientForm;
 import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.mvc.Models;
@@ -9,6 +11,11 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 import java.math.BigDecimal;
+import javax.mvc.binding.BindingResult;
+import javax.validation.Valid;
+import javax.validation.executable.ExecutableType;
+import javax.validation.executable.ValidateOnExecution;
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 
@@ -18,23 +25,33 @@ import javax.ws.rs.POST;
 public class LoginController {
 
     @Inject
-    ClientFacade facadeC;
+    ClientFacade dao;
+
+    @Inject
+    BindingResult formValidationErrors;
 
     @Inject
     Models models;
-    
-    @GET
-	public void show() {
-		models.put("login", facadeC.findAll());
-	}
 
-    @POST
-    public String login(@FormParam("nom") String nom, @FormParam("code") String code) {
-        if (facadeC.find(nom).getCode()== code){
-            return "redirect:/produits";
-        }
-        models.put("databaseErrorMessage", "Mot de passe ou login incorrect");
-        return "";
+    @GET
+    public void show() {
+        models.put("login", dao.findAll());
     }
 
+    @POST
+    @ValidateOnExecution(type = ExecutableType.ALL)
+    public String login(@Valid @BeanParam ClientForm formData) {
+        if (!formValidationErrors.isFailed()) {
+            try {
+                Client c = dao.find(formData.getCode());
+                if (c.getContact().equals(formData.getNom())) {
+                    return "redirect:/produits";
+                }
+            } catch (Exception e) {
+                models.put("databaseErrorMessage", "Mot de passe ou login incorrect");
+            }
+        }
+        models.put("validationErrors", formValidationErrors);
+        return null;
+    }
 }
