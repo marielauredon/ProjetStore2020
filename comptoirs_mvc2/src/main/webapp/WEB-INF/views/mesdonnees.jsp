@@ -14,43 +14,44 @@
     <body>
         <h1>Les informations personnelles du client ${client.contact}</h1>
         <form method="POST">
-            Société: <input code="société"></br>
+            <input type="hidden" name="code" value="${client.code}">
+            Société: <input name="societe" value="${client.societe}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('société')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Contact: <input code="contact"></br>
+            Contact: <input name="contact" value="${client.contact}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('contact')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Fonction: <input code="fonction"></br>
+            Fonction: <input name="fonction" value="${client.societe}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('fonction')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Adresse: <input code="adresse"></br>
+            Adresse: <input name="adresse" ${client.adresse}></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('adresse')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Ville: <input code="ville"></br>
+            Ville: <input name="ville" value="${client.ville}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('ville')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Région: <input code="région"></br>
+            Région: <input name="région" value="${client.region}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('région')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Code Postal: <input code="code postal"></br>
+            Code Postal: <input name="code postal" value="${client.codePostal}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('code postal')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
