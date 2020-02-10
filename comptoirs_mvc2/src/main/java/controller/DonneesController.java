@@ -32,26 +32,49 @@ public class DonneesController {
         Client c = facade.find(codeClient);
         models.put("client",c);
     }
-//    public void changerContact(@QueryParam("reference") String referenceClient, String contact){
-//        
-//        Client c = facade.find(referenceClient);
-//        c.setContact(contact);
-//        facade.edit(c);
-//    }
-//    public void changerAdresse(@QueryParam("reference") String referenceClient, String adresse ){
-//        
-//        Client c = facade.find(referenceClient);
-//        c.setAdresse(adresse);
-//        facade.edit(c);
-//    }
-//    public void changerFonction(@QueryParam("reference") String referenceClient, String fonction){
-//        
-//        Client c = facade.find(referenceClient);
-//        c.setFonction(fonction);
-//        facade.edit(c);
-//
-//    }
-    //Faire Changer Ville,région, code postale, pays, téléphone, faxe
+    public void changerContact(@QueryParam("contact") String referenceClient, String contact){
+        
+        Client c = facade.find(referenceClient);
+        c.setContact(contact);
+        facade.edit(c);
+    }
+    public void changerAdresse(@QueryParam("adresse") String referenceClient, String adresse ){
+        
+        Client c = facade.find(referenceClient);
+        c.setAdresse(adresse);
+        facade.edit(c);
+    }
+    public void changerFonction(@QueryParam("fonction") String referenceClient, String fonction){
+        
+        Client c = facade.find(referenceClient);
+        c.setFonction(fonction);
+        facade.edit(c);
+        
+    public void changerVille(@QueryParam("ville") String referenceClient, String fonction){
+        
+        Client c = facade.find(referenceClient);
+        c.setFonction(ville);
+        facade.edit(c);
+        
+    public void changerFonction(@QueryParam("region") String referenceClient, String fonction){
+        
+        Client c = facade.find(referenceClient);
+        c.setFonction(region);
+        facade.edit(c);
+        
+    public void changerFonction(@QueryParam("region") String referenceClient, String fonction){
+        
+        Client c = facade.find(referenceClient);
+        c.setFonction(region);
+        facade.edit(c);
+        
+    public void changerFonction(@QueryParam("code   postale") String referenceClient, String fonction){
+        
+        Client c = facade.find(referenceClient);
+        c.setFonction(code postale);
+        facade.edit(c);
+    }
+   // Faire Changer Ville,région, code postale, pays, téléphone, faxe
     
     
 }
