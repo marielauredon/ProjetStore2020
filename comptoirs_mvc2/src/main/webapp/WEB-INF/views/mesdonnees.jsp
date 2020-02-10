@@ -33,7 +33,7 @@
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Adresse: <input name="adresse" ${client.adresse}></br>
+            Adresse: <input name="adresse" value="${client.adresse}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('adresse')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
@@ -57,19 +57,19 @@
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Pays: <input code="pays"></br>
+            Pays: <input name="pays" value="${client.pays}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('pays')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Téléphone: <input code="téléphone"></br>
+            Téléphone: <input name="téléphone"value="${client.telephone}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('téléphone')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Fax: <input code="fax"></br>
+            Fax: <input name="fax" value="${client.fax}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('fax')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>

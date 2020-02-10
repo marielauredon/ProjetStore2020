@@ -7,10 +7,12 @@ package controller;
 
 import comptoirs.model.dao.ClientFacade;
 import comptoirs.model.entity.Client;
+import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.mvc.Models;
 import javax.mvc.View;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -37,7 +39,7 @@ public class DonneesController {
     }
 
     @POST
-    public void changerContact(@QueryParam("code") String referenceClient, @QueryParam("contact") String contact) {
+    public void changerContact(@FormParam("code") String referenceClient, @FormParam("contact") String contact) {
 
         Client c = facade.find(referenceClient);
         c.setContact(contact);
