@@ -7,15 +7,36 @@ package controller;
 
 import java.util.ArrayList;
 import comptoirs.model.dao.CategorieFacade;
+import comptoirs.model.dao.ProduitFacade;
 import comptoirs.model.entity.Produit;
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.mvc.Models;
+import javax.ws.rs.GET;
+import javax.ws.rs.QueryParam;
 
 
 /**
  *
  * @author marie
  */
-public class PanierController {
+@SessionScoped
+@Named("panier")
+
+public class PanierInfo {
+    @Inject 
+    ProduitFacade facade; 
+    @Inject
+    Models Models;
+    @GET
+    public void AjoutProduitCommande(@QueryParam('REFERENCE') int referenceProduit){
     
+}       
+            
+            
+    
+            
 ArrayList<Produit> ListProduits;
 
     public PanierController() {
