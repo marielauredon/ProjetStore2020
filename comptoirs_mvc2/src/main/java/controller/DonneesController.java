@@ -28,25 +28,29 @@ public class DonneesController {
     @Inject 
     Models models;  
     @GET
-    public void changerContact(@QueryParam("reference") String referenceClient, String contact){
-        
-        Client c = facade.find(referenceClient);
-        c.setContact(contact);
-        facade.edit(c);
+    public void AfficheClient(@QueryParam("code")String codeClient){
+        Client c = facade.find(codeClient);
+        models.put("client",c);
     }
-    public void changerAdresse(@QueryParam("reference") String referenceClient, String adresse ){
-        
-        Client c = facade.find(referenceClient);
-        c.setAdresse(adresse);
-        facade.edit(c);
-    }
-    public void changerFonction(@QueryParam("reference") String referenceClient, String fonction){
-        
-        Client c = facade.find(referenceClient);
-        c.setFonction(fonction);
-        facade.edit(c);
-
-    }
+//    public void changerContact(@QueryParam("reference") String referenceClient, String contact){
+//        
+//        Client c = facade.find(referenceClient);
+//        c.setContact(contact);
+//        facade.edit(c);
+//    }
+//    public void changerAdresse(@QueryParam("reference") String referenceClient, String adresse ){
+//        
+//        Client c = facade.find(referenceClient);
+//        c.setAdresse(adresse);
+//        facade.edit(c);
+//    }
+//    public void changerFonction(@QueryParam("reference") String referenceClient, String fonction){
+//        
+//        Client c = facade.find(referenceClient);
+//        c.setFonction(fonction);
+//        facade.edit(c);
+//
+//    }
     //Faire Changer Ville,région, code postale, pays, téléphone, faxe
     
     
