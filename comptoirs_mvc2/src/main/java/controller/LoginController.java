@@ -45,7 +45,7 @@ public class LoginController {
             try {
                 Client c = dao.find(formData.getCode());
                 if (c.getContact().equals(formData.getNom())) {
-                    return "redirect:/mesdonnees?code="+c.getCode();
+                    return "redirect:../pageClient.html";
                 }
             } catch (Exception e) {
                 models.put("databaseErrorMessage", "Mot de passe ou login incorrect");
