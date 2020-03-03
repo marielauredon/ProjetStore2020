@@ -13,13 +13,13 @@
             <ul> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('nom')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
-                    </c:forEach>
+                </c:forEach>
             </ul>
-            Code : <input name="code"></br>
+                Code : <input name="code" type="password"></br>
             <ul> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('code')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
-                    </c:forEach>
+                </c:forEach>
             </ul>
             <input type="submit" value="Connexion">
         </form>
@@ -30,3 +30,4 @@
         <a href="${pageContext.request.contextPath}/">Retour au menu</a>
     </body>
 </html>
+
