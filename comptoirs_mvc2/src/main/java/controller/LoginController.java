@@ -41,17 +41,17 @@ public class LoginController {
     @POST
     @ValidateOnExecution(type = ExecutableType.ALL)
     public String login(@Valid @BeanParam ClientForm formData) {
-        if (!formValidationErrors.isFailed()) {
+       // if (!formValidationErrors.isFailed()) {
             try {
                 Client c = dao.find(formData.getCode());
                 if (c.getContact().equals(formData.getNom())) {
-                    return "redirect:/produits";
+                    return "redirect:/mesdonnees?code="+c.getCode();
                 }
             } catch (Exception e) {
                 models.put("databaseErrorMessage", "Mot de passe ou login incorrect");
             }
-        }
-        models.put("validationErrors", formValidationErrors);
+       // }
+       //models.put("validationErrors", formValidationErrors);
         return null;
     }
 }
