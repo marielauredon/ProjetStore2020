@@ -39,7 +39,7 @@
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Ville: <input name="ville" value="${client.ville}"></br>
+            Ville: <input name="ville" value="${leclient.ville}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('ville')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>

@@ -48,9 +48,9 @@ public class LoginController {
     public String login(@FormParam("nom") String nom, @FormParam("code") String code) {
             try {
                 
-                Client c = dao.find(code);
-                client.setCode(code);
+                Client c = dao.find(code);             
                 if (c.getContact().equals(nom)) {
+                    client.setCode(code);
                     return "redirect:espaceClient";
                 }
             } catch (Exception e) {

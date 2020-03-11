@@ -23,20 +23,11 @@ import javax.ws.rs.QueryParam;
 @Named("client")
    
 public class SessionClient implements Serializable {
-    @Inject
-    ClientFacade facade;
-    @Inject
-    Models models;
+
     private String codeClient;
         
-    public String setCode(@QueryParam("code") String codeClient){
-        try{
-            Client c = facade.find(codeClient);
-            this.codeClient=codeClient;
-            
-        }catch(Exception e){models.put("databaseErrorMessage","Client introuvable");}  
-        
-        return null;
+    public void setCode(String code){
+            this.codeClient=code;
     }
     
     public String getcode(){
