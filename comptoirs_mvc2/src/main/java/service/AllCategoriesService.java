@@ -1,4 +1,4 @@
- package service;
+package service;
 
 import comptoirs.model.dao.CategorieFacade;
 import java.util.List;
@@ -20,8 +20,7 @@ public class AllCategoriesService {
 	 * La sérialisation en JSON ne marche pas, pourquoi ?
 	 * Celui qui trouve la solution à 2 points de plus.
 	 * @return Toutes les catégories (en XML seulement pour le moment !)
-         * 
-	 *///car il faut faire appel à AJAX fonction jquery pour convertir en XML et JSON
+	 */
 	@GET
 	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	public List<Categorie> allCategories() {

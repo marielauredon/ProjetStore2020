@@ -84,4 +84,3 @@
         <a href="${pageContext.request.contextPath}/">Retour au menu</a>
     </body>
 </html>
-<a href="../../../java/comptoirs/model/dao/ClientFacade.java"></a>
