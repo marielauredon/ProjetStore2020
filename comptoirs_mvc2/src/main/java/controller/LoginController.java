@@ -32,6 +32,9 @@ public class LoginController {
 
     @Inject
     Models models;
+    
+    private String codeClient;
+
 
     @GET
     public void show() {
@@ -39,13 +42,14 @@ public class LoginController {
     }
 
     @POST
-    @ValidateOnExecution(type = ExecutableType.ALL)
-    public String login(@Valid @BeanParam ClientForm formData) {
-       // if (!formValidationErrors.isFailed()) {
+    @Path("login")
+    public String login(@FormParam("nom") String nom, @FormParam("code") String code, SessionClient client) {
             try {
-                Client c = dao.find(formData.getCode());
-                if (c.getContact().equals(formData.getNom())) {
-                    return "redirect:../pageClient.html";
+                
+                Client c = dao.find(code);
+                if (c.getContact().equals(nom)) {
+                    client.setCode(code);
+                    return "redirect:produits";
                 }
             } catch (Exception e) {
                 models.put("databaseErrorMessage", "Mot de passe ou login incorrect");

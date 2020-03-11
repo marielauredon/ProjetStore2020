@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -8,14 +7,18 @@
     </head>
     <body>
         <h1>Connexion</h1>
-        <form method="POST">
+        <form method="POST" action="login/login">
             Nom : <input name="nom"></br>
             <ul> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('nom')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                 </c:forEach>
             </ul>
-                Code : <input name="code" type="password"></br>
+                Code : <input name="code" type="password"></br> 
+                <%
+                        String codeClient = request.getParameter( "code" );
+                        session.setAttribute( "theCode", codeClient );
+                %>
             <ul> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('code')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
@@ -30,4 +33,3 @@
         <a href="${pageContext.request.contextPath}/">Retour au menu</a>
     </body>
 </html>
-
