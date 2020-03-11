@@ -24,7 +24,7 @@ import javax.ws.rs.QueryParam;
  */
 @Controller
 @Path("mesdonnees")
-@View("mesdonnees.jsp")
+
 public class DonneesController {
 
     @Inject
@@ -32,12 +32,15 @@ public class DonneesController {
     @Inject
     Models models;
     String codeClient;
+    @Inject
+    SessionClient client;
 
-    @GET
-    public void AfficheClient(SessionClient client) {
+    @POST
+    @View("mesdonnees.jsp")
+    public void AfficheClient() {
         codeClient = client.getcode();
         Client c = facade.find(codeClient);
-        models.put("client", c);
+        models.put("leclient", c);
     }
 
     @POST
@@ -46,7 +49,7 @@ public class DonneesController {
         Client c = facade.find(referenceClient);
         c.setContact(contact);
         facade.edit(c);
-        models.put("client", c);
+        models.put("leclient", c);
 
     }
 

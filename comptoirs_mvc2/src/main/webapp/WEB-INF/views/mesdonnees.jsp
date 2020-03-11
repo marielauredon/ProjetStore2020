@@ -12,28 +12,28 @@
         <title>Données du client</title>
     </head>
     <body>
-        <h1>Les informations personnelles du client ${client.contact}</h1>
+        <h1>Les informations personnelles du client ${leclient.contact}</h1>
         <form method="POST">
-            <input type="hidden" name="code" value="${client.code}">
-            Société: <input name="societe" value="${client.societe}"></br>
+            <input type="hidden" name="code" value="${leclient.code}">
+            Société: <input name="societe" value="${leclient.societe}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('société')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Contact: <input name="contact" value="${client.contact}"></br>
+            Contact: <input name="contact" value="${leclient.contact}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('contact')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Fonction: <input name="fonction" value="${client.societe}"></br>
+            Fonction: <input name="fonction" value="${leclient.societe}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('fonction')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Adresse: <input name="adresse" value="${client.adresse}"></br>
+            Adresse: <input name="adresse" value="${leclient.adresse}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('adresse')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
@@ -45,31 +45,31 @@
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Région: <input name="région" value="${client.region}"></br>
+            Région: <input name="région" value="${leclient.region}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('région')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Code Postal: <input name="code postal" value="${client.codePostal}"></br>
+            Code Postal: <input name="code postal" value="${leclient.codePostal}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('code postal')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Pays: <input name="pays" value="${client.pays}"></br>
+            Pays: <input name="pays" value="${leclient.pays}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('pays')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Téléphone: <input name="téléphone"value="${client.telephone}"></br>
+            Téléphone: <input name="téléphone"value="${leclient.telephone}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('téléphone')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                     </c:forEach>
             </br>
-            Fax: <input name="fax" value="${client.fax}"></br>
+            Fax: <input name="fax" value="${leclient.fax}"></br>
             <br> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('fax')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>

@@ -22,7 +22,6 @@ import javax.ws.rs.QueryParam;
 @Controller
 @Path("espaceClient")
 
-
 public class EspaceClientController {
    @Inject
    Models models;

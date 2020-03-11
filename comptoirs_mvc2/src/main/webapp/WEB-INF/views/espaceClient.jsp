@@ -13,7 +13,7 @@
     </head>
     <body>
         <ul>
-            <p>Hello world ${leclient.contact}</p>
+            <li><a href="mvc/mesdonnées">Modifier mes données</li>
         </ul>
     </body>
 </html>
