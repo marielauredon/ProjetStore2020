@@ -21,16 +21,21 @@ import javax.ws.rs.QueryParam;
  */
 @Controller
 @Path("espaceClient")
-@View("espaceClient.jsp")
+
 
 public class EspaceClientController {
    @Inject
    Models models;
    @Inject
    ClientFacade facadeC;
+   @Inject
+   SessionClient client;
    private String codeClient;
-   public void bienvenue(SessionClient client){
+   
+   @GET
+   @View("espaceClient.jsp")
+   public void bienvenue(){
         Client c = facadeC.find(client.getcode());
-        models.put("client",c);
+        models.put("leclient",c);
    }
 }

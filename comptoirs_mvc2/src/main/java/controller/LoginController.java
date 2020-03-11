@@ -51,7 +51,7 @@ public class LoginController {
                 Client c = dao.find(code);
                 client.setCode(code);
                 if (c.getContact().equals(nom)) {
-                    return "redirect:produits";
+                    return "redirect:espaceClient";
                 }
             } catch (Exception e) {
                 models.put("databaseErrorMessage", "Mot de passe ou login incorrect");
