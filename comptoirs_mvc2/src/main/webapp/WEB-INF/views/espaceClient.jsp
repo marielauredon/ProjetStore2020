@@ -13,7 +13,7 @@
     </head>
     <body>
         <ul>
-            <p>Hello world ${client.contact}</p>
+            <p>Hello world ${leclient.contact}</p>
         </ul>
     </body>
 </html>
