@@ -23,14 +23,18 @@ import javax.ws.rs.QueryParam;
 @Path("administrateur")
 @View("administrateur.jsp")
 public class AdminController {
-  @Inject 
-  CategorieFacade facade;
-  @Inject
-  Models models; // Pour transmettre les infos à la vue
-  @GET
-  public void afficheNbProduitsCommandés(
-    @QueryParam("code") int codeCategorie ) {
-      Categorie cg = facade.find(codeCategorie);
-      models.put("categorie", cg);
-  }
+
+    @Inject
+    CategorieFacade facade;
+    @Inject
+    Models models; // Pour transmettre les infos à la vue
+
+    @GET
+    public void afficheNbProduitsCommandés(
+            @QueryParam("code") int codeCategorie) {
+        Categorie cg = facade.find(codeCategorie);
+        models.put("categorie", cg);
+    }
 }
+      
+ 

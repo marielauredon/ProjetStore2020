@@ -46,9 +46,13 @@ public class LoginController {
     @POST
     @Path("login")
     public String login(@FormParam("nom") String nom, @FormParam("code") String code) {
+        if (nom.equals("admin") && code.equals("admin")) {
+            return "redirect:administrateur";
+
+        } else {
             try {
-                
-                Client c = dao.find(code);             
+
+                Client c = dao.find(code);
                 if (c.getContact().equals(nom)) {
                     client.setCode(code);
                     return "redirect:espaceClient";
@@ -56,8 +60,9 @@ public class LoginController {
             } catch (Exception e) {
                 models.put("databaseErrorMessage", "Mot de passe ou login incorrect");
             }
-       // }
-       //models.put("validationErrors", formValidationErrors);
-        return null;
+            // }
+            //models.put("validationErrors", formValidationErrors);
+            return null;
+        }
     }
 }
