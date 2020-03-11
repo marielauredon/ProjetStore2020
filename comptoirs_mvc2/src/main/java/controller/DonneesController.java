@@ -35,7 +35,7 @@ public class DonneesController {
     @Inject
     SessionClient client;
 
-    @POST
+    @GET
     @View("mesdonnees.jsp")
     public void AfficheClient() {
         codeClient = client.getcode();

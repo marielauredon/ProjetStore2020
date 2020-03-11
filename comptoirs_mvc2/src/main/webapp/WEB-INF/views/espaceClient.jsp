@@ -13,7 +13,7 @@
     </head>
     <body>
         <ul>
-            <li><a href="mvc/mesdonnées">Modifier mes données</li>
+            <li><a href="mesdonnees">Modifier mes données</li>
         </ul>
     </body>
 </html>
