@@ -33,7 +33,9 @@ public class LoginController {
     @Inject
     Models models;
     
-    private String codeClient;
+    @Inject
+    SessionClient client;
+   
 
 
     @GET
@@ -43,12 +45,12 @@ public class LoginController {
 
     @POST
     @Path("login")
-    public String login(@FormParam("nom") String nom, @FormParam("code") String code, SessionClient client) {
+    public String login(@FormParam("nom") String nom, @FormParam("code") String code) {
             try {
                 
                 Client c = dao.find(code);
+                client.setCode(code);
                 if (c.getContact().equals(nom)) {
-                    client.setCode(code);
                     return "redirect:produits";
                 }
             } catch (Exception e) {

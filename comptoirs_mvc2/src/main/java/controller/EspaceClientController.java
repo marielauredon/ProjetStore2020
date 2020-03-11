@@ -25,16 +25,12 @@ import javax.ws.rs.QueryParam;
 
 public class EspaceClientController {
    @Inject
-   SessionClient client;
-   @Inject
    Models models;
    @Inject
-   ClientFacade facade;
+   ClientFacade facadeC;
    private String codeClient;
-   public void bienvenue(){
-        codeClient = client.getcode();
-        Client c = facade.find(codeClient);
-        models.put("client", c);
-        models.put("client",client);
+   public void bienvenue(SessionClient client){
+        Client c = facadeC.find(client.getcode());
+        models.put("client",c);
    }
 }
