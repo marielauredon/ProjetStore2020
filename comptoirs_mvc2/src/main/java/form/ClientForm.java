@@ -117,7 +117,7 @@ public class ClientForm implements Serializable {
 		return code_postal;
 	}
         
-         public void set(final String pays) {
+         public void setpays(final String pays) {
 		this.pays = pays;
 	}
         
