@@ -11,14 +11,18 @@ public class ClientForm implements Serializable {
 
 	private static final long serialVersionUID = -3523783484400524581L;
 
-	@MvcBinding @FormParam("nom")
+	@MvcBinding @FormParam("contact")
 	@Size(min = 1, max = 50)
-	private String nom;
+	private String contact;
 
 	@MvcBinding @FormParam("code")
 	@NotEmpty
 	@Size(min = 1, max = 255)
 	private String code;
+        
+        @MvcBinding @FormParam("societe")
+	@Size(min = 1, max = 50)
+	private String societe;
         
         @MvcBinding @FormParam("fonction")
 	@NotEmpty
@@ -35,12 +39,12 @@ public class ClientForm implements Serializable {
 	@Size(min = 1, max = 255)
 	private String ville;
         
-        @MvcBinding @FormParam("region")
+        @MvcBinding @FormParam("région")
 	@NotEmpty
 	@Size(min = 1, max = 255)
 	private String region;
         
-        @MvcBinding @FormParam("code_postal")
+        @MvcBinding @FormParam("code postal")
 	@NotEmpty
 	@Size(min = 1, max = 255)
 	private String code_postal;
@@ -50,7 +54,7 @@ public class ClientForm implements Serializable {
 	@Size(min = 1, max = 255)
 	private String pays;
         
-        @MvcBinding @FormParam("telephone")
+        @MvcBinding @FormParam("téléphone")
 	@NotEmpty
 	@Size(min = 1, max = 255)
 	private String telephone;
@@ -61,12 +65,12 @@ public class ClientForm implements Serializable {
 	private String fax;
 	// Getters, setters
 	
-	public String getNom() {
-		return nom;
+	public String getContact() {
+		return contact;
 	}
 
-	public void setNom(final String nom) {
-		this.nom = nom;
+	public void setContact(final String contact) {
+		this.contact = contact;
 	}
 
 	public String getCode() {
@@ -77,67 +81,74 @@ public class ClientForm implements Serializable {
 		this.code = code;
 	}
         
+        public void setSociete(final String societe){
+            this.societe = societe;
+        }
         
+        public String getSociete() {
+		return societe;
+	}
+               
         
-        public String getfonction() {
+        public String getFonction() {
 		return fonction;
 	}
         
-        public void setfonction(final String fonction){
+        public void setFonction(final String fonction){
                 this.fonction = fonction;
         }
         
-        public String getadresse() {
+        public String getAdresse() {
 		return adresse;
         }
-        public void setadresse(final String adresse) {
+        public void setAdresse(final String adresse) {
 		this.adresse = adresse;
 	}
-        public String getville() {
+        public String getVille() {
 		return ville;
 	}
         
-         public void setville(final String ville) {
+         public void setVille(final String ville) {
 		this.ville = ville;
 	}
             
-         public void setregion(final String region) {
+         public void setRegion(final String region) {
 		this.region = region;
 	}
         
-        public String getregion() {
+        public String getRegion() {
 		return region;
 	}
         
-         public void setcode_postal(final String code_postal) {
+         public void setCodePostal(final String code_postal) {
 		this.code_postal = code_postal;
 	}
         
-        public String getcode_postal() {
+        public String getCodePostal() {
 		return code_postal;
 	}
         
-         public void set(final String pays) {
+         public void setPays(final String pays) {
 		this.pays = pays;
 	}
         
-        public String getpays() {
+        public String getPays() {
 		return pays;
 	}
         
-         public void settelephone(final String telephone) {
+         public void setTelephone(final String telephone) {
 		this.telephone = telephone;
 	}
         
-        public String gettelephone() {
+        public String getTelephone() {
 		return telephone;
 	}
         
-         public void setfax(final String fax) {
+         public void setFax(final String fax) {
 		this.fax = fax;
 	}
         
-        public String getfax() {
+        public String getFax() {
 		return fax;
 	}
 }

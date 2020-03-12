@@ -7,6 +7,7 @@ package controller;
 
 import comptoirs.model.dao.ClientFacade;
 import comptoirs.model.entity.Client;
+import form.ClientForm;
 import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.mvc.Controller;
@@ -44,10 +45,19 @@ public class DonneesController {
     }
 
     @POST
-    public void changerContact(@FormParam("code") String referenceClient, @FormParam("contact") String contact) {
-
-        Client c = facade.find(referenceClient);
-        c.setContact(contact);
+    public void changer(ClientForm dataClient) {
+        Client c = facade.find(dataClient.getCode());
+        c.setContact(dataClient.getContact());
+        c.setCode(dataClient.getCode());
+        c.setSociete(dataClient.getSociete());
+        c.setFonction(dataClient.getFonction());
+        c.setAdresse(dataClient.getAdresse());
+        c.setVille(dataClient.getVille());
+        c.setRegion(dataClient.getRegion());
+        c.setCodePostal(dataClient.getCodePostal());
+        c.setPays(dataClient.getPays());
+        c.setTelephone(dataClient.getTelephone());
+        c.setFax(dataClient.getFax());
         facade.edit(c);
         models.put("leclient", c);
 
