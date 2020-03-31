@@ -43,8 +43,9 @@ public class DonneesController {
         Client c = facade.find(codeClient);
         models.put("leclient", c);
     }
-
+    
     @POST
+    @Path("mesdonnees")
     public void changer(ClientForm dataClient) {
         Client c = facade.find(dataClient.getCode());
         c.setContact(dataClient.getContact());
@@ -58,9 +59,10 @@ public class DonneesController {
         c.setPays(dataClient.getPays());
         c.setTelephone(dataClient.getTelephone());
         c.setFax(dataClient.getFax());
-        facade.edit(c);
-        models.put("leclient", c);
+        facade.edit(c);  
+    
 
     }
-
+    
+   
 }
