@@ -13,6 +13,7 @@ import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.mvc.Models;
 import javax.mvc.View;
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -25,6 +26,7 @@ import javax.ws.rs.QueryParam;
  */
 @Controller
 @Path("mesdonnees")
+@View("mesdonnees.jsp")
 
 public class DonneesController {
 
@@ -37,7 +39,6 @@ public class DonneesController {
     SessionClient client;
 
     @GET  
-    @View("mesdonnees.jsp")
     public void AfficheClient() {
         codeClient = client.getcode();
         Client c = facade.find(codeClient);
@@ -45,11 +46,13 @@ public class DonneesController {
     }
     
     @POST
-    @Path("mesdonnees")
-    public void changer(ClientForm dataClient) {
+    // Même path que pour le GET
+    // @Path("mesdonnees")
+    public void changer(@BeanParam ClientForm dataClient) {
         Client c = facade.find(dataClient.getCode());
         c.setContact(dataClient.getContact());
-        c.setCode(dataClient.getCode());
+	// On ne change pas la clé
+        // c.setCode(dataClient.getCode());
         c.setSociete(dataClient.getSociete());
         c.setFonction(dataClient.getFonction());
         c.setAdresse(dataClient.getAdresse());
@@ -60,7 +63,8 @@ public class DonneesController {
         c.setTelephone(dataClient.getTelephone());
         c.setFax(dataClient.getFax());
         facade.edit(c);  
-    
+	// Et maintenant, on va où ?
+	// Par défaut, on retourne sur mesdonnées.jsp
 
     }
     

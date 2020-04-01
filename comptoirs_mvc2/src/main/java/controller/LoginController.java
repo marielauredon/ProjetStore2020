@@ -44,7 +44,8 @@ public class LoginController {
     }
 
     @POST
-    @Path("login")
+    // Même Path que pour le GET
+    //@Path("login")
     public String login(@FormParam("nom") String nom, @FormParam("code") String code) {
         if (nom.equals("admin") && code.equals("admin")) {
             return "redirect:administrateur";
@@ -62,7 +63,8 @@ public class LoginController {
             }
             // }
             //models.put("validationErrors", formValidationErrors);
-            return null;
+            //return null;
         }
+	return "login.jsp";
     }
 }
