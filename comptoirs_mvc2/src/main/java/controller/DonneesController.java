@@ -46,13 +46,9 @@ public class DonneesController {
     }
     
     @POST
-    // Même path que pour le GET
-    // @Path("mesdonnees")
-    public void changer(@BeanParam ClientForm dataClient) {
+    public String changer(@BeanParam ClientForm dataClient) {
         Client c = facade.find(dataClient.getCode());
         c.setContact(dataClient.getContact());
-	// On ne change pas la clé
-        // c.setCode(dataClient.getCode());
         c.setSociete(dataClient.getSociete());
         c.setFonction(dataClient.getFonction());
         c.setAdresse(dataClient.getAdresse());
@@ -63,6 +59,7 @@ public class DonneesController {
         c.setTelephone(dataClient.getTelephone());
         c.setFax(dataClient.getFax());
         facade.edit(c);  
+        return "mesdonnes.jsp";
 	// Et maintenant, on va où ?
 	// Par défaut, on retourne sur mesdonnées.jsp
 
