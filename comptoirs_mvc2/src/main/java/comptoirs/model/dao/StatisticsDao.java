@@ -1,8 +1,10 @@
 package comptoirs.model.dao;
 
 import comptoirs.model.dto.StatsResult;
+import controller.SessionClient;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -32,6 +34,16 @@ public class StatisticsDao {
 		"JOIN p.ligneCollection li " + 
 		"WHERE cat.code = :code " +
 		"GROUP BY p.nom " ;
+        
+        private static final String PURCHASE_ORDER =
+                "SELECT new comptoirs.model.dto.StatsResult" +
+                                        "(c.client, li.quantité) " +
+                "FROM Ligne li" +
+                "JOIN Commande com" +
+                "JOIN Produit p" +
+                "WHERE com.client = :code AND com.numero=li.commande" ;
+                
+            
 	
 	@PersistenceContext(unitName = "comptoirs")
 	private EntityManager em;
@@ -53,4 +65,12 @@ public class StatisticsDao {
 		List<StatsResult> results = query.setParameter("code", codeCategorie).getResultList();
 		return results;
 	}
+        @Inject
+        SessionClient client;
+        public List<StatsResult> bondecommande(){
+            Query query = em.createQuery(PURCHASE_ORDER, StatsResult.class);
+            String codeClient=client.getcode();
+            List<StatsResult> results = query.setParameter("code", codeClient).getResultList();
+            return results;
+        }
 }

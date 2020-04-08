@@ -13,7 +13,8 @@
     </head>
     <body>
         <ul>
-            <li><a href="mesdonnees">Modifier mes données</li>
+            <li><a href="mesdonnees">Modifier mes données</a></li>
+            <li><a href="mvc/service/unitesVendues/bondecommande" target="_blank">Afficher mon bon de commande</a></li>
         </ul>
     </body>
 </html>

@@ -2,6 +2,7 @@ package service;
 
 import comptoirs.model.dao.StatisticsDao;
 import comptoirs.model.dto.StatsResult;
+import controller.SessionClient;
 import java.util.List;
 import javax.inject.Inject;
 
@@ -14,6 +15,9 @@ import javax.ws.rs.core.MediaType;
 
 @Path("service/unitesVendues")
 public class StatisticsService {
+        
+        @Inject
+        SessionClient client;
 
 	@Inject
 	StatisticsDao dao;
@@ -36,4 +40,11 @@ public class StatisticsService {
 		List result = dao.unitesVenduesParCategorie();
 		return result;
 	}
+        
+        @GET @Path ("bondecommande")
+        @Produces(MediaType.APPLICATION_JSON)  
+        public List<StatsResult> bondecommandeclient(){
+            return dao.bondecommande();
+        }
+        
 }
