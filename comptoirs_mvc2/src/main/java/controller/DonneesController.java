@@ -59,10 +59,10 @@ public class DonneesController {
         c.setTelephone(dataClient.getTelephone());
         c.setFax(dataClient.getFax());
         facade.edit(c);  
-        return "mesdonnes.jsp";
 	// Et maintenant, on va où ?
 	// Par défaut, on retourne sur mesdonnées.jsp
-
+        models.put("leclient", c);
+        return "mesdonnees.jsp";
     }
     
    
