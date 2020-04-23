@@ -38,9 +38,9 @@ public class StatisticsDao {
         private static final String PURCHASE_ORDER =
                 "SELECT new comptoirs.model.dto.StatsResult" +
                                         "(c.client, li.quantité) " +
-                "FROM Ligne li" +
-                "JOIN Commande com" +
-                "JOIN Produit p" +
+                "FROM Ligne li " +
+                "JOIN Commande com " +
+                "JOIN Produit p " +
                 "WHERE com.client = :code AND com.numero=li.commande" ;
                 
             
@@ -65,6 +65,7 @@ public class StatisticsDao {
 		List<StatsResult> results = query.setParameter("code", codeCategorie).getResultList();
 		return results;
 	}
+	
         @Inject
         SessionClient client;
         public List<StatsResult> bondecommande(){
