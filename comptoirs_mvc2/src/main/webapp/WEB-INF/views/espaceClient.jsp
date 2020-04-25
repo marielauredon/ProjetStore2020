@@ -14,7 +14,7 @@
     <body>
         <ul>
             <li><a href="mesdonnees">Modifier mes données</a></li>
-            <li><a href="service/unitesVendues/bondecommande" target="_blank">Afficher mon bon de commande</a></li>
+            <li><a href="bondecommande">Afficher mon bon de commande</a></li>
         </ul>
     <a href="${pageContext.request.contextPath}/">Retour au menu</a>
     </body>
