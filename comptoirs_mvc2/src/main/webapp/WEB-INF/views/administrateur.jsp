@@ -6,10 +6,17 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Espace Administrateur</title>
+          <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
+        <style>
+            body{
+                font-family: arial;
+                background: silver;
+            }
+        </style>
     </head>
     <body>
         <center>
@@ -21,4 +28,4 @@
         </table>
         <a href="${pageContext.request.contextPath}/">Retour au menu</a>
     </body>
-</html>
+

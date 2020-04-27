@@ -2,7 +2,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
 	<title>Produits vendus par catégorie</title>
-	<meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
+        <style>
+            form, html, input, head,p,h{
+                text-align: center;
+                list-style-type: none; 
+            }
+            html,form,head{
+               background: gray;  
+            }
+        </style>
+	
 	<!-- On charge JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!-- On charge l'API Google -->

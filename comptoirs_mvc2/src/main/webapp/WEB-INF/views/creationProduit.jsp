@@ -5,7 +5,17 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                 <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
 		<title>Ajout d'un nouveau produit</title>
+                 <style>
+            form, html, input, head,h,ul,p{
+                text-align: center;
+                list-style-type: none; 
+            }
+            html,form,head{
+               background: gray;  
+            }
+        </style>
 	</head>
 
 	<body>

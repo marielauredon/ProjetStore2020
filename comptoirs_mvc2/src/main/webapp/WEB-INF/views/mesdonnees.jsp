@@ -9,10 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
         <title>Données du client</title>
+         <style>
+            form, html, input, head,h,ul,p{
+                text-align: center;
+                list-style-type: none; 
+            }
+            html,form,head{
+               background: gray;  
+            }
+        </style>
     </head>
     <body>
-        <h1>Les informations personnelles du client ${leclient.contact}</h1>
+        <h1>Mes informations personnelles du client ${leclient.contact}</h1>
         <form method="POST">
             <input type="hidden" name="code" value="${leclient.code}">
             Société: <input name="societe" value="${leclient.societe}"></br>
