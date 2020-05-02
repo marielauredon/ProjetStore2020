@@ -38,12 +38,11 @@ public class BonDeCommandeController {
     
     Collection<Commande> LesCommandes;
     
-@GET
-public void AfficheBonDeCommande(){
-    codeClient = client.getcode();
-    Client c = facadec.find(codeClient);
-    LesCommandes = c.getCommandeCollection();
-    models.put("bondecommande",LesCommandes);
-}
+   @GET  
+    public void AfficheClient() {
+        codeClient = client.getcode();
+        Client c = facadec.find(codeClient);
+        models.put("leclient", c);
+    }
    
 }

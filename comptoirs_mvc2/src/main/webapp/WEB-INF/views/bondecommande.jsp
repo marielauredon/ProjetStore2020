@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +13,15 @@
         <title>Mes Bons De Commande</title>
     </head>
     <body>
-        <h1>Bons de commande</h1>
-        <p>${bondecommande}</p>
+        <h1>Bons de commande</h1>        
+        <table border='1'>
+            <tr><th>Numéro</th><th>Date de saisie</th></tr>
+            <c:forEach var="commande" items="${leclient.commandeCollection}">
+                <tr>
+                    <td>${commande.numero}</td>
+                    <td>${commande.saisieLe}</td>
+                </tr>
+            </c:forEach>
+        </p>
     </body>
 </html>

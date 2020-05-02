@@ -6,31 +6,12 @@
     <head>
     
         <title>Connexion</title>
-        <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
-        <style>
-     #container {
-        margin-top: 20%;
-        border-left: 20%;
-        background: silver;
-        }
-     form, body,ul, a {
-        list-style-type: none;
-        text-decoration: none;
-        text-align: center;
-        background: silver;
-        }
-      input{
-        text-align: center;  
-        }
-      body{
-        margin: 100px;
-        padding: 20px;
-}
-        </style>
+        <img src="../Images/epicerie_logo.png" alt="Logo de l'épicerie" id="logo" />
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/CSS/loginCSS.css">
     </head>
     
         <h1></h1>
-        <form method="POST" action="login/login">
+        <form method="POST">
             Nom : <input name="nom"></br>
             <ul> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('nom')}">
