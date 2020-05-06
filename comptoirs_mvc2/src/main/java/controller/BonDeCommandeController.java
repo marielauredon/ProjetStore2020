@@ -35,9 +35,7 @@ public class BonDeCommandeController {
     SessionClient client;
     
     String codeClient;
-    
-    Collection<Commande> LesCommandes;
-    
+   
    @GET  
     public void AfficheClient() {
         codeClient = client.getcode();

@@ -1,26 +1,20 @@
+<%-- 
+    Document   : shopping
+    Created on : 2 mai 2020, 04:19:47
+    Author     : marie
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html>
-
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Produits dans la catégorie '${selected.libelle}'</title>
-                 <img src="../Images/epicerie_logo.png" alt="Logo de l'épicerie" id="logo" />
-                <style>
-            form, html, input, head,h,ul,p{
-                text-align: center;
-                list-style-type: none; 
-            }
-            html,form,head{
-               background: gray;  
-            }
-        </style>
-	</head>
-
-	<body>
-		<h3>Choisissez la catégorie à afficher</h3>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Shopping</title>
+    </head>
+    <body>
+        <h1>Faites vos achats ! </h1>
+        <h2>Choisissez la catégorie à afficher</h2>
 		<form> 	<%-- L'action par défaut est de revenir à l'URL du contrôleur --%>
 			<%-- Une liste de choix pour le paramètre 'code' --%>
 			<select name='code' onchange='this.form.submit()'>
@@ -39,9 +33,24 @@
 			</select>
 			<input type='submit'>
 		</form>
-		<h2>Produits dans la catégorie '${selected.libelle}'</h2>
+            <h2>Produits dans la catégorie '${selected.libelle}'</h2>
 		<%-- On montre la liste des produits dans la catégorie sélectionnée sous la forme d'une table HTML --%>		
-		<table border='1'>
+		
+                    <p>Choisir un produit à ajouter au panier : </p>
+                    <form>
+                        <select name="produit" onchange='this.form.submit()'>
+                            <c:forEach var="produit" items="${selected.produitCollection}">
+                                <option value='${produit.reference}'>${produit.nom}</option>
+                            </c:forEach>
+                        </select>
+                        <p>Quantité :</p><input name="quantité" type='number'/>
+                        <input type='submit' value='Ajouter au panier'/>
+                    </form>
+                 
+                    <p>Mon panier :</p>
+                    ${panier}
+                    
+                 <table border='1'>   
 			<tr><th>Référence</th><th>Nom</th><th>Disponible ?</th></tr>
 			<%-- Est-ce qu'il y a des produits dans la catégorie sélectionnée ? --%>
 			<c:if test="${empty selected.produitCollection}">
@@ -59,13 +68,6 @@
 					</td>
 				</tr>
 			</c:forEach>
-		</table>
-		<hr>
-		<a href="${pageContext.request.contextPath}/">Retour au menu</a>
-	<hr>
-	<h3>Code source</h3>
-	<ul>
-		<li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/java/controller/CategorieProduitController.java" target="_blank">Le contrôleur</a></li>
-		<li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/webapp/WEB-INF/views/categorieProduits.jsp"  target="_blank">La vue</a></li>
-	</ul>		
+		</table>                           
+    </body>
 </html>

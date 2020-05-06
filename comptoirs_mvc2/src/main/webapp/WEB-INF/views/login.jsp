@@ -18,11 +18,7 @@
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
                 </c:forEach>
             </ul>
-                Code : <input name="code" type="password"></br>         
-                <%
-                        String codeClient = request.getParameter( "code" );
-                        session.setAttribute( "theCode", codeClient );
-                %>
+                Code : <input name="code" type="password"></br>        
             <ul> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('code')}">
                     <li><span style="color: red;">${mvc.encoders.html(error.message)}</span></li>
