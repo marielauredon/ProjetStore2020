@@ -14,7 +14,7 @@
                 list-style-type: none; 
             }
             html,form,head{
-               background: gray;  
+               background: silver;  
             }
         </style>
 </head>

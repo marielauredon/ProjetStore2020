@@ -13,6 +13,7 @@
             html,form,head{
                background: gray;  
             }
+            
         </style>
 </head>
 

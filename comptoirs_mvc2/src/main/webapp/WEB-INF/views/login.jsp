@@ -30,7 +30,7 @@
     </head>
     
         <h1></h1>
-        <form method="POST" action="login/login">
+        <form method="POST">
             Nom : <input name="nom"></br>
             <ul> <%-- On montre les erreurs de saisie éventuelles --%>
                 <c:forEach var="error" items="${validationErrors.getErrors('nom')}">
