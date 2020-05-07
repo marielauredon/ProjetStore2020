@@ -8,10 +8,10 @@ and open the template in the editor.
     Author     : marie
 */
 
-    form, html, input, head,p,h,ul{
-                text-align: center;
-                list-style-type: none; 
-            }
-            html,form,head{
-               background: gray;  
-            }
+form, html, input, head,p,h,ul{
+    text-align: center;
+    list-style-type: none; 
+}
+html,form,head{
+    background: gray;  
+}

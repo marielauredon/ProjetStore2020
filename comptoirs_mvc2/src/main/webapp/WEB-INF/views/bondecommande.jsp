@@ -9,8 +9,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <img src="../Images/epicerie_logo.png" alt="Logo de l'épicerie" id="logo" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Mes Bons De Commande</title>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/CSS/bondecommandeCSS.css">
     </head>
     <body>
         <h1>Bons de commande</h1>        

@@ -7,13 +7,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <img src="../Images/epicerie_logo.png" alt="Logo de l'épicerie" id="logo" />
+    <head>      
         <title>Espace Client</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/CSS/espaceclientCSS.css">
     </head>
     <body>
+        <img src="../Images/epicerie_logo.png" alt="Logo de l'épicerie" id="logo" />
         <ul>
             <li><a href="mesdonnees">Modifier mes données</a></li>
             <li><a href="bondecommande">Afficher mon bon de commande</a></li>
