@@ -20,6 +20,7 @@
                 <tr>
                     <td>${commande.numero}</td>
                     <td>${commande.saisieLe}</td>
+                    <td><input name="référence" value="Entrez référence"/><input type="submit" value="Détails"/></td>
                 </tr>
             </c:forEach>
         </p>

@@ -9,7 +9,7 @@ import comptoirs.model.dao.ClientFacade;
 import comptoirs.model.dao.CommandeFacade;
 import comptoirs.model.entity.Client;
 import comptoirs.model.entity.Commande;
-import java.util.Collection;
+import comptoirs.model.entity.Ligne;
 import javax.inject.Inject;
 import javax.mvc.Controller;
 import javax.mvc.Models;
@@ -24,39 +24,22 @@ import javax.ws.rs.Path;
  * @author marie
  */
 @Controller
-@Path("bondecommande")
-@View("bondecommande.jsp")
-public class BonDeCommandeController {
-    
-    @Inject
-    ClientFacade facadec;
-    
-    @Inject
-    Models models;
-    
-    @Inject
-    SessionClient client;
-    
-    String codeClient;
-    
+@Path("détailsbondecommande")
+@View("détailsbondecommande.jsp")
+public class DétailsBonDeCommande {
     @Inject
     CommandeFacade facade;
-    
+    @Inject
+    Models models;
     @Inject
     SessionCommande commande;
    
-   @GET  
-    public void AfficheClient() {
-        codeClient = client.getcode();
-        Client c = facadec.find(codeClient);
-        models.put("leclient", c);
+    @GET
+    public void show() {
+        Commande c = facade.find(commande.getNumero());
+        models.put("lacommande", c);
     }
     
-    @POST
-   public String AfficherCommande(@FormParam("référence") Integer référence){
-       Commande commande=facade.find(référence);
-        commande.setNumero(référence);
-        return "redirect:détailsbondecommande";
-    }
-   
+    
+    
 }
