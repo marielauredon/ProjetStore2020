@@ -30,6 +30,7 @@ public class BonDeCommandeController {
     
     @Inject
     ClientFacade facadec;
+
     
     @Inject
     Models models;
@@ -38,12 +39,7 @@ public class BonDeCommandeController {
     SessionClient client;
     
     String codeClient;
-    
-    @Inject
-    CommandeFacade facade;
-    
-    @Inject
-    SessionCommande commande;
+
    
    @GET  
     public void AfficheClient() {
@@ -51,12 +47,5 @@ public class BonDeCommandeController {
         Client c = facadec.find(codeClient);
         models.put("leclient", c);
     }
-    
-    @POST
-   public String AfficherCommande(@FormParam("référence") Integer référence){
-       Commande commande=facade.find(référence);
-        commande.setNumero(référence);
-        return "redirect:détailsbondecommande";
-    }
-   
+
 }
