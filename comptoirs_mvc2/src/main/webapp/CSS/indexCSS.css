@@ -36,19 +36,3 @@ and open the template in the editor.
 #menu li:hover ul li {
     float:none;
 }
-#menu li ul {
-<<<<<<< HEAD
-    position: absolute;
-}
- 
-
-html,body {
-  background: url("Images/magasin1.png");
-  background-repeat: no-repeat;
-=======
-    position:absolute;
-} 
-body{
- background-color: silver;  
->>>>>>> 30047a8f21d5e705ccf9d5871a9ba1b3f3974628
-}
