@@ -9,6 +9,7 @@ import comptoirs.model.dao.CategorieFacade;
 import comptoirs.model.dao.ClientFacade;
 import comptoirs.model.entity.Categorie;
 import comptoirs.model.entity.Client;
+import comptoirs.model.entity.Ligne;
 import comptoirs.model.entity.Produit;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,8 +48,7 @@ public class ShoppingController {
     @Inject
     CategorieFacade facade;
     
-    ArrayList ProduitQte;
-    ArrayList monpanier;
+    Ligne ligne;
     
     
     @GET
@@ -70,12 +70,5 @@ public class ShoppingController {
 		models.put("selected", categorieChoisie);
 	}
     
-    @POST
-    public void RemplissagePanier(@FormParam("produit") Produit Produit, @FormParam("quantité") Integer qte){
-       ProduitQte.add(Produit);
-       ProduitQte.add(qte);
-       panier.addProduct(ProduitQte);
-       monpanier=panier.getPanier();
-       models.put("panier", monpanier);
-    }
+   
 }

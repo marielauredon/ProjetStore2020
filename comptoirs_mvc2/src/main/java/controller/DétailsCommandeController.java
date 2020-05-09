@@ -6,17 +6,12 @@
 package controller;
 
 import comptoirs.model.dao.ClientFacade;
-import comptoirs.model.dao.CommandeFacade;
 import comptoirs.model.entity.Client;
-import comptoirs.model.entity.Commande;
-import java.util.Collection;
+import javax.mvc.Models;
 import javax.inject.Inject;
 import javax.mvc.Controller;
-import javax.mvc.Models;
 import javax.mvc.View;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 /**
@@ -24,10 +19,9 @@ import javax.ws.rs.Path;
  * @author marie
  */
 @Controller
-@Path("bondecommande")
-@View("bondecommande.jsp")
-public class BonDeCommandeController {
-    
+@Path("détailsCommande")
+@View("détailsCommande.jsp")
+public class DétailsCommandeController {
     @Inject
     ClientFacade facadec;
 
@@ -39,13 +33,12 @@ public class BonDeCommandeController {
     SessionClient client;
     
     String codeClient;
-
-   
-   @GET  
-    public void AfficheClient() {
+    
+    @GET  
+    public void showclient() {
         codeClient = client.getcode();
         Client c = facadec.find(codeClient);
         models.put("leclient", c);
     }
-
+    
 }

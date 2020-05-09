@@ -5,9 +5,11 @@
  */
 package controller;
 
+import comptoirs.model.entity.Ligne;
 import comptoirs.model.entity.Produit;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -19,20 +21,29 @@ import javax.inject.Named;
 @Named("panier")
    
 public class SessionPanier implements Serializable {
-
-    private ArrayList contenu;
     
-    public void addProduct (ArrayList ProduitQte){
-        contenu.add(ProduitQte);
+    private Integer numero;
+    private Collection<Ligne> ligneCollection;
+    
+    public void setNumero(Integer numero){
+        this.numero=numero;
+    }
+    
+    public Integer getNumero(){
+        return numero;
+    }
+    
+    public void addProduct (Ligne ligne){
+        ligneCollection.add(ligne);
     }
     
     public void removeProduct(Integer i){
-       contenu.remove(i);
+       ligneCollection.remove(i);
     }
     
     
-    public ArrayList getPanier(){
-        return contenu;
+    public Collection getPanier(){
+        return ligneCollection;
     }
     
 }
