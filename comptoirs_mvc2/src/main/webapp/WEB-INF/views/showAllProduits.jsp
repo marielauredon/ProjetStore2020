@@ -7,22 +7,16 @@
 
 <head>
 	<title>Affiche tous les produits</title>
-        <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
-         <style>
-            form, html, input, head,table{
-                text-align: center;
-                list-style-type: none; 
-            }
-            html,form,head{
-               background: silver;  
-            }
-        </style>
+        <link href="../CSS/showAllProduits.css" rel="stylesheet" type="text/css"/>
+          <img src="../Images/epicerie_logo.png" alt=""/>
+ 
 </head>
 
 <body>
 	<h1>Liste des produits</h1>
-	<a href="produits/create">Ajouter un nouveau produit</a>
-	<table border='1'>
+        <a href="produits/create"><button>Ajouter un nouveau produit</button></a><br>
+        <br>
+        <table border='1'>
 		<tr><th>Référence</th><th>Nom</th><th>Prix Unitaire</th><th>Catégorie</th></tr>
 		<%-- Pour chaque produit, une ligne dans la table HTML --%>
 		<c:forEach var="produit" items="${produits}">
@@ -35,8 +29,8 @@
 				<td>${mvc.encoders.html(produit.categorie.libelle)}</td>
 			</tr>
 		</c:forEach>
-	</table>
-	<a href="${pageContext.request.contextPath}/">Retour au menu</a>
+        </table><br>
+                <a href="${pageContext.request.contextPath}/"><button>Retour au menu</button></a>
 </body>
 
 </html>

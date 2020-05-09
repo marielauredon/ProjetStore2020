@@ -10,13 +10,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Client</title>
-        <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
-    </head>
+    <img src="../Images/epicerie_logo.png" alt=""/>
+    <link href="../CSS/loginclient.css" rel="stylesheet" type="text/css"/>
+</head>
     <body>
         <form method="POST">
             Code : <input name="code" type="password">
         </form>
         <input type="submit" value="Connexion">
-        <a href="${pageContext.request.contextPath}/">Retour au menu</a>
+        <a href="${pageContext.request.contextPath}/"> <button>Retour au menu </button></a>
     </body>
 </html>

@@ -3,21 +3,12 @@
 
 <!DOCTYPE html>
 <html>
-
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Produits dans la catégorie '${selected.libelle}'</title>
-                 <img src="../Images/epicerie_logo.png" alt="Logo de l'épicerie" id="logo" />
-                <style>
-            form, html, input, head,h,ul,p{
-                text-align: center;
-                list-style-type: none; 
-            }
-            html,form,head{
-               background: gray;  
-            }
-        </style>
-	</head>
+                <img src="../Images/epicerie_logo.png" alt=""/>
+                <link href="../CSS/categorieproduit.css" rel="stylesheet" type="text/css"/>
+            </head>
 
 	<body>
 		<h3>Choisissez la catégorie à afficher</h3>
@@ -61,11 +52,12 @@
 			</c:forEach>
 		</table>
 		<hr>
-		<a href="${pageContext.request.contextPath}/">Retour au menu</a>
-	<hr>
+                <a href="${pageContext.request.contextPath}/"><button> Retour au menu</button> </a>
+                <hr></div>
 	<h3>Code source</h3>
 	<ul>
-		<li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/java/controller/CategorieProduitController.java" target="_blank">Le contrôleur</a></li>
-		<li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/webapp/WEB-INF/views/categorieProduits.jsp"  target="_blank">La vue</a></li>
+            <li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/java/controller/CategorieProduitController.java" target="_blank"><button>Le contrôleur</button></a></li>
+            <li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/webapp/WEB-INF/views/categorieProduits.jsp"  target="_blank"><button>La vue</button></a></li>
 	</ul>		
+
 </html>

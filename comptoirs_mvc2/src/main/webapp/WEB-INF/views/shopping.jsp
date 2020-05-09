@@ -11,6 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Shopping</title>
+        <img src="../Images/epicerie_logo.png" alt=""/>
+        <link href="../CSS/shopping.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <h1>Faites vos achats ! </h1>

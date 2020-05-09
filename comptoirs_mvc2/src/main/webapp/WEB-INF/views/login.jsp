@@ -30,6 +30,6 @@
             <span style="color: red;">${databaseErrorMessage}</span>
         </c:if>
         <hr>
-        <a href="${pageContext.request.contextPath}/">Retour au menu</a>
+        <a href="${pageContext.request.contextPath}/"><button> Retour au menu</button> </a>
     </body>
 </html>

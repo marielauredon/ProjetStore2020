@@ -4,17 +4,9 @@
 
 <head>
 	<title>Affiche toutes les catégories</title>
-        <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
-         <style>
-            form, html, input, head,p,h{
-                text-align: center;
-                list-style-type:none; 
-            }
-            html,form,head{
-               background: gray;  
-            }
-            
-        </style>
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/CSS/showAllCategories.css">
+             <img src="../Images/epicerie_logo.png" alt=""/>
+           
 </head>
 
 <body>
@@ -32,12 +24,12 @@
 		</c:forEach>
 	</table>
 	<hr>
-	<a href="${pageContext.request.contextPath}/">Retour au menu</a>
+        <a href="${pageContext.request.contextPath}/"><button>Retour au menu</button></a>
 	<hr>
 	<h3>Code source</h3>
 	<ul>
-		<li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/java/controller/CategorieController.java"  target="_blank">Le contrôleur</a></li>
-		<li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/webapp/WEB-INF/views/showAllCategories.jsp"  target="_blank">La vue</a></li>
+            <li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/java/controller/CategorieController.java"  target="_blank"><button>Le contrôleur</button></a></li>
+            <li><a href="https://bitbucket.org/rbastide/comptoirs_mvc/src/test/src/main/webapp/WEB-INF/views/showAllCategories.jsp"  target="_blank"><button>La vue </button></a></li>
 	</ul>
 </body>
 

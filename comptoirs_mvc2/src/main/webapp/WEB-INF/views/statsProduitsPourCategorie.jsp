@@ -3,16 +3,8 @@
 <head>
 	<title>Produits vendus par catégorie</title>
         <meta charset="UTF-8">
-        <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
-        <style>
-            form, html, input, head,p,h{
-                text-align: center;
-                list-style-type: none; 
-            }
-            html,form,head{
-               background: gray;  
-            }
-        </style>
+        <img src="../../Images/epicerie_logo.png" alt=""/>      
+        <link href="../../CSS/statsProduitsPourCategories.css" rel="stylesheet" type="text/css"/>
 	
 	<!-- On charge JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -72,5 +64,5 @@
 	<!-- Le graphique apparaît ici -->
 	<div id="piechart" style="width: 1000px; height: 500px;"></div>
 	<hr>
-	<a href="${pageContext.request.contextPath}/">Retour au menu</a>
+        <a href="${pageContext.request.contextPath}/"><button>Retour au menu</button></a>
 </body>

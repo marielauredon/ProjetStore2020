@@ -4,11 +4,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 28 avr. 2020, 18:15:05
-    Author     : marie
+    Created on : 6 mai 2020, 18:04:01
+    Author     : 33789
 */
 
-            form, html, input, head,h,ul,p{
+ form, html, input, head,p,h,ul{
                 text-align: center;
                 list-style-type: none; 
             }
