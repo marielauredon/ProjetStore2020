@@ -8,7 +8,6 @@ and open the template in the editor.
     Author     : marie
 */
 
-<<<<<<< HEAD
      form, body,ul, a {
         list-style-type: none;
         text-decoration: none;
@@ -18,12 +17,3 @@ and open the template in the editor.
       input{
         text-align: center;  
         }
-=======
-form, html, input, head,p,h,ul{
-    text-align: center;
-    list-style-type: none; 
-}
-html,form,head{
-    background: gray;  
-}
->>>>>>> 30047a8f21d5e705ccf9d5871a9ba1b3f3974628

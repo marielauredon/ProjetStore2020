@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Détails des commandes</title>
+    <img src="../Images/epicerie_logo.png" alt=""/>
     </head>
     <body>
         <h1>Détails des commandes</h1>
@@ -26,6 +27,12 @@
                     </c:forEach>
                 </table>
             </c:forEach>
-        <a href="bondecommande">Retour</a>   
+                <a href="bondecommande"><button>Retour</button></a>   
     </body>
+    <style>
+        html,img{
+            background: silver;
+            text-align: center;
+        }
+    </style>
 </html>

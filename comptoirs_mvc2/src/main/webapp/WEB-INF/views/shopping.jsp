@@ -52,7 +52,7 @@
                     <table border='1'>
                     <tr><th>Nom du produit</th><th>Quantité</th></tr>
                    
-            <a href="shopping">Mettre à jour le panier</a>
+                    <a href="shopping"><button>Mettre à jour le panier</button></a>
             
                  <table border='1'>   
 			<tr><th>Référence</th><th>Nom</th><th>Disponible ?</th></tr>
@@ -72,6 +72,6 @@
 					</td>
 				</tr>
 			</c:forEach>
-		</table>        
+                 </table> <br>       
     </body>
 </html>
