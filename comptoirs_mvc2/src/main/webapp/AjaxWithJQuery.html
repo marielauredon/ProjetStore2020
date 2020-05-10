@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 	<head>
@@ -41,10 +40,10 @@
 			
 		</script>        
 	</head>
-        <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
-	    <style>
-                    html{
-               background: silver;  
+                    <img src="Images/epicerie_logo.png" alt=""/><style>
+              html,img{
+               background: silver; 
+               text-align: center;
             }
                     </style>
         <body>
@@ -52,59 +51,6 @@
 		<button id="doAjax">Exécuter la requête AJAX</button><br>
 		<textarea id="demo" rows="3" cols="40">Le résultat apparaîtra ici</textarea>
 		<hr>
-                <a href="./"><button>Retour au menu</button>S</a>				
+                <a href="./"><button>Retour au menu</button></a>				
 	</body>
 </html>
-=======
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Ajax avec JQuery</title>
-		<meta charset="UTF-8">
-		<!-- On charge la bibliothèque JQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script>
-			$(document).ready(// Exécuté à la fin du chargement de la page
-				function () {
-					// Quand on clique sur le bouton doAjax, on exécute la fonction doRequest
-					$("#doAjax").click(doRequest);
-				}
-			);
-
-			function doRequest() {
-				$.ajax({
-					url: "mvc/service/longRequest",
-					success: showResult,
-					error: showError
-				});
-				$("#demo").html("Requête en cours");
-				// On désactive le bouton pour éviter de faire plusieurs appels en même temps
-				$("#doAjax").prop("disabled", true);
-
-			}
-
-			// Fonction qui traite les résultats de la requête
-			function showResult(result) {
-				// On affiche le résultat
-				$("#demo").html(result);
-				// On réactive le bouton
-				$("#doAjax").prop("disabled", false);
-			}
-
-			// Fonction qui traite les erreurs de la requête
-			function showError(xhr, status, message) {
-				$("#demo").html("Erreur: " + status + " : " + message);
-			}
-			
-		</script>        
-	</head>
-        <img src="https://drive.google.com/uc?id=1TbXuzACXN3wfbFzLaNm2TeukEMnJ3Tf0" alt="Logo de l'épicerie" id="logo" />
-	<body>
-		<h1>AJAX / JQuery / Requête longue</h1>
-		<button id="doAjax">Exécuter la requête AJAX</button><br>
-		<textarea id="demo" rows="3" cols="40">Le résultat apparaîtra ici</textarea>
-		<hr>
-		<a href="./">Retour au menu</a>				
-	</body>
-</html>
->>>>>>> 30047a8f21d5e705ccf9d5871a9ba1b3f3974628

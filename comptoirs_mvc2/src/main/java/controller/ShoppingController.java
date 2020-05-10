@@ -7,7 +7,6 @@ package controller;
 
 import comptoirs.model.dao.CategorieFacade;
 import comptoirs.model.dao.ClientFacade;
-import comptoirs.model.dao.ProduitFacade;
 import comptoirs.model.entity.Categorie;
 import comptoirs.model.entity.Client;
 import comptoirs.model.entity.Ligne;
@@ -36,9 +35,6 @@ public class ShoppingController {
     ClientFacade facadec;
     
     @Inject
-    ProduitFacade facadep;
-    
-    @Inject
     Models models;
     
     @Inject
@@ -56,7 +52,7 @@ public class ShoppingController {
     
     
     @GET
-	public void produitsParCategorie( @QueryParam("code") Integer codeCategorie) {
+	public void produitsParCategorie( @QueryParam("code") Integer codeCategorie ) {
 		// On cherche la liste des catégories pour l'afficher dans la liste de choix
 		final List<Categorie> touteslesCategories = facade.findAll();
 
@@ -67,18 +63,12 @@ public class ShoppingController {
 			categorieChoisie = facade.find(codeCategorie); // Et si on ne trouve pas ?
 		else
 			// On prend la première de la liste (encore faut-il qu'il y en ait une !)
-			categorieChoisie = touteslesCategories.get(0);              
+			categorieChoisie = touteslesCategories.get(0);
 
 		// On transmet les informations à la vue
 		models.put("categories", touteslesCategories);
 		models.put("selected", categorieChoisie);
-                
 	}
     
-   @POST
-   public void AfficherPanier(@QueryParam("produit") Produit produit, @FormParam("quantite") short quantite){
-       ligne.setProduit1(produit);
-       ligne.setQuantite(quantite);
-       panier.addProduct(ligne);
-   }
+   
 }

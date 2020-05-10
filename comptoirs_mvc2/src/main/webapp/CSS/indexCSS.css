@@ -36,3 +36,8 @@ and open the template in the editor.
 #menu li:hover ul li {
     float:none;
 }
+#menu li ul {
+    position: absolute;
+}
+ 
+
