@@ -6,8 +6,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Mes Bons De Commande</title>
-    <img src="../Images/epicerie_logo.png" alt=""/>
-    <link href="../CSS/bondecommande.css" rel="stylesheet" type="text/css"/>
+        <img src="../Images/epicerie_logo.png" alt=""/>
+        <link href="../CSS/bondecommandeCSS.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <h1>Bons de commande</h1>        
@@ -19,14 +19,9 @@
                     <td>${commande.saisieLe}</td>
                 </tr>
             </c:forEach>
-        </p
     </body>
-    <style>
-        html{
-        background:  silver;
-       
-        }
-    </style>
+    <a href="détailsCommande"><button>Détail des commandes</button></a>
+    <a href="espaceClient"><button>Retour</button></a>
 </html>
 
 

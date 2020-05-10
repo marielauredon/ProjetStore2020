@@ -15,6 +15,7 @@
     </head>
     <body>
         <h1>Les informations personnelles du client ${leclient.contact}</h1>
+        <a href="espaceClient"><button>Retour</button></a>
         <form method="POST">
             <input type="hidden" name="code" value="${leclient.code}">
             Société: <input name="societe" value="${leclient.societe}"></br>

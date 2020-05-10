@@ -11,7 +11,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Détails des commandes</title>
-    <img src="../Images/epicerie_logo.png" alt=""/>
+        <img src="../Images/epicerie_logo.png" alt=""/>
+        <link rel="stylesheet" href="../CSS/détailsCommandeCSS.css"/>
     </head>
     <body>
         <h1>Détails des commandes</h1>
@@ -29,10 +30,4 @@
             </c:forEach>
                 <a href="bondecommande"><button>Retour</button></a>   
     </body>
-    <style>
-        html,img{
-            background: silver;
-            text-align: center;
-        }
-    </style>
 </html>
